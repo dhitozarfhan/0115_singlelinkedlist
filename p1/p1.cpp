@@ -58,7 +58,6 @@ bool searchNode(int nim, Node* current, Node* previous) {
         previous = current;
         current = current->next;
     }
-
     if (current == NULL)
     {
         return false;
@@ -72,7 +71,6 @@ bool searchNode(int nim, Node* current, Node* previous) {
         return false;
     }
 }
-
 bool deleteNode(int nim) {
     Node* current = START;
     Node* previous = START;
@@ -92,13 +90,20 @@ bool listEmpty() {
         return false;
 }
 
- else {
-     Node* currentNode = START;
-     while (currentNode != NULL) {
-         cout << "NIM: " << currentNode->noMhs << ", Nama: " << currentNode->name << endl;
-         currentNode = currentNode->next;
-     }
-     }
+void traverse() {
+    if (listEmpty()) {
+        cout << "List Kosong" << endl;
+        system("pause");
+        system("cls");
+        return;
+    }
+    else {
+        Node* currentNode = START;
+        while (currentNode != NULL) {
+            cout << "NIM: " << currentNode->noMhs << ", Nama: " << currentNode->name << endl;
+            currentNode = currentNode->next;
+        }
+    }
 }
 
 void searchData() {
@@ -108,7 +113,6 @@ void searchData() {
         system("cls");
         return;
     }
-
     else {
         int nim;
         cout << "Masukkan NIM: ";
@@ -125,7 +129,23 @@ void searchData() {
     }
 }
 
+int main() {
+    int pilihan;
+    do
+    {
+        try
+        {
 
+            cout << "1. Tambah Data" << endl;
+            cout << "2. Hapus Data" << endl;
+            cout << "3. Tampilkan data" << endl;
+            cout << "4. Cari Data" << endl;
+            cout << "5. Keluar" << endl;
+            cout << "Pilihan: ";
+            cin >> pilihan;
+            switch (pilihan)
+            {
+            
 
 
 
