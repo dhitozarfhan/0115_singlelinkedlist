@@ -31,7 +31,7 @@ void addNode() {
         START = nodeBaru;
         return;
     }
-    
+
     Node* previous = START;
     Node* current = START;
 
@@ -42,7 +42,7 @@ void addNode() {
             cout << "NIM sudah ada" << endl;
             return;
         }
-    
+
         previous = current;
         current = current->next;
     }
@@ -50,6 +50,13 @@ void addNode() {
     nodeBaru->next = current;
     previous->next = nodeBaru;
 }
+
+bool searchNode(int nim, Node* current, Node* previous) {
+    previous = START;
+    current = START;
+    while (current != NULL && nim > current->noMhs)
+    {
+
 
 
     
